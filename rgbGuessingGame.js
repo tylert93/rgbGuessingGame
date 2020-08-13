@@ -1,17 +1,21 @@
-window.setTimeout(function(){
-var numSquares = 6;
-var pickedColour = null;  
-var colours = []
-var squares = document.querySelectorAll(".square");
-var colourDisplay = document.getElementById("colourDisplay");
-var message = document.getElementById("message");
-var resetBtn = document.getElementById("reset");
-var h1 = document.querySelector("h1");
-var modeButtons = document.querySelectorAll(".mode");
+window.setTimeout(() => {
+
+const squares = document.querySelectorAll(".square"),
+      colourDisplay = document.getElementById("colourDisplay"),
+      message = document.getElementById("message"),
+      resetBtn = document.getElementById("reset"),
+      h1 = document.querySelector("h1"),
+      modeButtons = document.querySelectorAll(".mode");
+    
+let numSquares = 6,
+    pickedColour = null, 
+    colours = [];
+
 //reset the game when the page is loaded
 reset();
 setUpSquares();
 setUpButtons();
+
 //add an event listener to each coloured square to check if the player has guessed correctly
 function setUpSquares(){
     for(i = 0; i < squares.length; i++){
@@ -32,7 +36,7 @@ function setUpSquares(){
 //allow the player to change the difficulty
 function setUpButtons(){
     for(i = 0; i < modeButtons.length; i++){
-        modeButtons[i].addEventListener("click", function(){
+        modeButtons[i].addEventListener("click", function() {
             modeButtons[0].classList.remove("selected");
             modeButtons[1].classList.remove("selected");
             this.classList.add("selected");
